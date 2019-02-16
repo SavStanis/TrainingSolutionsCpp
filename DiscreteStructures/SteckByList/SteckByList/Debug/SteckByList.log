@@ -1,0 +1,4 @@
+﻿  SteckByList.cpp
+d:\github\trainingsolutionscpp\discretestructures\steckbylist\steckbylist\steckbylist.cpp(81): warning C4715: 'MyStack::pop': not all control paths return a value
+d:\github\trainingsolutionscpp\discretestructures\steckbylist\steckbylist\steckbylist.cpp(59): warning C4715: 'MyStack::top': not all control paths return a value
+  SteckByList.vcxproj -> D:\GitHub\TrainingSolutionsCpp\DiscreteStructures\SteckByList\Debug\SteckByList.exe

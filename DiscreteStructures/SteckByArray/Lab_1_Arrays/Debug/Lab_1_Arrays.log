@@ -1,2 +1,3 @@
 ﻿  Lab_1_Arrays.cpp
+d:\github\trainingsolutionscpp\discretestructures\steckbyarray\lab_1_arrays\lab_1_arrays.cpp(57): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
   Lab_1_Arrays.vcxproj -> D:\GitHub\TrainingSolutionsCpp\DiscreteStructures\SteckByArray\Debug\Lab_1_Arrays.exe

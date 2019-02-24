@@ -23,7 +23,10 @@ public:
 		{
 			if (NumberOfHead >= SizeOfStack - 1)
 			{
-				std::cout << "Stack overflow" << std::endl;
+				std::cout << "Stack overflow\n we need to resize it" << std::endl;
+				resize();
+				NumberOfHead++;
+				StackArray[NumberOfHead] = newElement;
 			}
 			else 
 			{
@@ -42,7 +45,7 @@ public:
 			return false;
 		}
 
-		//return value of the top element of steck and delete this elevent
+		//return value of the top elemetdnt of steck and delete this elevent
 		int pop()
 		{
 			if (!isEmpty()) 
@@ -50,7 +53,8 @@ public:
 				NumberOfHead--;
 				return StackArray[NumberOfHead + 1];
 			}
-			return 0;
+			std::cout << "\n Stack is empty" << std::endl;
+			return NAN;
 		}
 
 		//return the size of stack
@@ -82,6 +86,18 @@ public:
 		{
 			NumberOfHead = -1;
 		}
+
+		void resize()
+		{
+			int newSize = SizeOfStack * 2;
+			int* NewArray = new int[newSize];
+			for (int i = 0; i < SizeOfStack; i++)
+			{
+				NewArray[i] = StackArray[i];
+			}
+			this->StackArray = NewArray;
+			this->SizeOfStack = newSize;
+		}
 };
 
 //Function for rewriting of information step by step
@@ -89,9 +105,9 @@ MyStack rewriting(MyStack* firstStack);
 
 int main()
 {
-	std::cout << "Input the size of stack:" << std::endl;
+	std::cout << "Input the start size of stack:" << std::endl;
 
-	int size, numberOfElements, element;
+	int size = 5, numberOfElements, element;
 	std::cin >> size;
 
 	MyStack stack(size);
@@ -118,19 +134,6 @@ int main()
 	std::cout << "------\n\n\n\nRewriting from intemediate in second steck:\n------" << std::endl;
 	MyStack secondStack = rewriting(&intermediateStack);
 	std::cout << std::endl;
-
-	/*This block of code was made to check all another methods in class MyStack
-	{
-		system("pause");
-		system("cls");
-		secondStack.info();
-		int k = secondStack.pop();
-		secondStack.info();
-		secondStack.clear();
-		system("pause");
-	}
-	*/
-
 	system("pause");
     return 0;
 }

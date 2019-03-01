@@ -2,13 +2,12 @@
 #include <string>
 #include <vector>
 
-class Student
-{
+class Student {
 	std::string name;
 	std::vector<int> marks;
-	std::string Kontr;
+	bool contract;
 public:
-	Student(std::string name, std::vector<int> marks, std::string Kontr);
+	Student(std::string name = " ", std::vector<int> marks = {}, bool contract = true);
 	
 	double averageMark();
 

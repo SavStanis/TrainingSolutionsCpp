@@ -2,19 +2,16 @@
 #include "Student.h"
 
 
-Student::Student(std::string name, std::vector<int> marks, std::string Kontr)
-{
+Student::Student(std::string name, std::vector<int> marks, bool contract) {
 	this->marks = marks;
 	this->name = name;
-	this->Kontr = Kontr;
+	this->contract = contract;
 }
 
-double Student::averageMark()
-{
+double Student::averageMark() {
 	int NumberOfSubjects = 0;
 	double Sum = 0;
-	for (int i : marks)
-	{
+	for (int i : marks) {
 		Sum += i;
 		NumberOfSubjects++;
 	}

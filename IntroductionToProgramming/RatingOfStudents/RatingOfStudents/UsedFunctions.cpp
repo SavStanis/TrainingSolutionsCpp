@@ -1,6 +1,7 @@
 ﻿#include "stdafx.h"
-
 #include <iostream>
+#include <fstream>
+#include <iomanip>
 #include "Student.h"
 #include "UsedFunctions.h"
 
@@ -37,4 +38,28 @@ Student* parsing(std::string line)
 
 	Student* newStudent = new Student(name, marks, isContract);
 	return newStudent;
+}
+
+void sort(std::vector<Student*> &listOfStudent) {
+	
+	for (int i = 0; i < listOfStudent.size(); i++) {
+		for (int j = i; j < listOfStudent.size(); j++) {
+			if (listOfStudent[i]->getAverageMark() < listOfStudent[j]->getAverageMark()) {
+				Student* k = new Student();
+				k = listOfStudent[i];
+				listOfStudent[i] = listOfStudent[j];
+				listOfStudent[j] = k;
+			}
+		}
+	}
+}
+
+void result(std::ofstream &output, std::vector<Student*> &listOfStudent, int Best) {
+	double minAverageMark;
+	
+	for (int i = 0; i < Best; i++) {
+		output << listOfStudent[i]->getName() << ","  << std::fixed<<std::setprecision(3) << listOfStudent[i]->getAverageMark() << "\n";
+		minAverageMark = listOfStudent[i]->getAverageMark();
+	}
+	output << "Min is," << minAverageMark;
 }

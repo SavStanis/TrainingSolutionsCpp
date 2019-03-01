@@ -1,2 +1,4 @@
-﻿  RatingOfStudents.cpp
+﻿  UsedFunctions.cpp
+d:\github\trainingsolutionscpp\introductiontoprogramming\ratingofstudents\ratingofstudents\usedfunctions.cpp(45): warning C4018: '<': signed/unsigned mismatch
+d:\github\trainingsolutionscpp\introductiontoprogramming\ratingofstudents\ratingofstudents\usedfunctions.cpp(46): warning C4018: '<': signed/unsigned mismatch
   RatingOfStudents.vcxproj -> D:\GitHub\TrainingSolutionsCpp\IntroductionToProgramming\RatingOfStudents\Debug\RatingOfStudents.exe

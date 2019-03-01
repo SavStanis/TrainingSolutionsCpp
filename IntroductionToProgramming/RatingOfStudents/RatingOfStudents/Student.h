@@ -6,10 +6,11 @@ class Student {
 	std::string name;
 	std::vector<int> marks;
 	bool contract;
+	double averageMark;
 public:
 	Student(std::string name = " ", std::vector<int> marks = {}, bool contract = true);
-	
-	double averageMark();
-
+	double getAverageMark();
+	bool isContract();
+	std::string getName();
 };
 

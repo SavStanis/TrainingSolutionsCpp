@@ -1,6 +1,4 @@
-﻿
-
-#include "stdafx.h"
+﻿#include "stdafx.h"
 #include <iostream>
 #include <string>
 #include "Deque.h"
@@ -24,7 +22,7 @@ int main()
 	MyDeque.print();
 	moving(MyDeque);
 	MyDeque.print();
-
+	std::cout << std::endl;
 	system("pause");
 	return 0;
 }

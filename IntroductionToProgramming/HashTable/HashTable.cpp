@@ -1,12 +1,37 @@
 #include "HashTable.h"
+#include <cmath>
 
 
-
-HashTable::HashTable()
+HashTable::HashTable(int n)
 {
+	this->maxSize = n;
+	table = new LinkedList<std::string>[maxSize];
+	size = 0;
 }
 
-
-HashTable::~HashTable()
+int HashTable::hash(std::string word)
 {
+	long long h = 3;
+	const int seed = 5;
+	for (int i = 0; i < word.length(); i++)
+	{
+		h += pow((int)word[i], seed);
+		h %= maxSize;
+	}
+	return h; 
+}
+
+void HashTable::push(std::string value)
+{
+	int i = value.find(';');
+	std::string name = value.substr(0, i);
+	int hashResult = hash(name);
+	table[hashResult].push(name, value);
+	size++;
+}
+
+std::string HashTable::find(std::string name)
+{
+	int hashResult = hash(name);
+	return table[hashResult].find(name);
 }

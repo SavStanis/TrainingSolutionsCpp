@@ -45,8 +45,8 @@ void LinkedList<T>::push(T name, T value)
 	Node<T>* newNode = new Node<T>(name, value);
 	if (size == 0)
 	{
-		head = newNode;
-		end = newNode;
+		this->head = newNode;
+		this->end = newNode;
 	}
 	else
 	{

@@ -32,6 +32,10 @@ void HashTable::push(std::string value)
 
 std::string HashTable::find(std::string name)
 {
+	for (int i = 0; i < name.size(); i++)
+	{
+		name[i] = (char)toupper(name[i]);
+	}
 	int hashResult = hash(name);
 	return table[hashResult].find(name);
 }

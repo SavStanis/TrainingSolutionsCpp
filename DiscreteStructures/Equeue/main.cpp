@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Equeue.h"
 
+void replace(Equeue &my, int v, int m);
+
 int main()
 {
 	int helpingVariable;
@@ -15,6 +17,33 @@ int main()
 		myEqueue.push(val, pri);
 		myEqueue.print();
 	}
+	myEqueue.print();
+	int v, m;
+	std::cout << "Input v and m" << std::endl;
+	std::cin >> v >> m;
+	replace(myEqueue, v, m);
+	myEqueue.print();
 	system("pause");
 	return 0;
+}
+
+void replace(Equeue &my, int v, int m)
+{
+	Equeue second;
+	int thisSize = my.sizeOfEqueue();
+	for (int i = 0; i < thisSize; i++)
+	{
+		int k = my.pop();
+		if (k == v)
+			second.push(k, 3);
+		else
+		{
+			if (k == m)
+				second.push(k, 1);
+			else
+				second.push(k, 2);
+		}
+
+	}
+	my = second;
 }

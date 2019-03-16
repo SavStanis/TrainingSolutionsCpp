@@ -13,6 +13,6 @@ public:
 	int pop();
 	void print();
 	bool isEmpty();
-	void sizeOfEqueue();
+	int sizeOfEqueue();
 };
 

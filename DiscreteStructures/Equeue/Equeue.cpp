@@ -71,7 +71,7 @@ int Equeue::pop()
 	{
 		Node* printer = end;
 		int ret = head->value;
-		while (printer->next != head || printer->next != nullptr)
+		while (printer->next != head)
 		{
 			printer = printer->next;
 		}
@@ -85,6 +85,7 @@ int Equeue::pop()
 		size--;
 		this->head = nullptr;
 		this->end = nullptr;
+		return ret;
  	}
 	else
 	{
@@ -97,7 +98,8 @@ bool Equeue::isEmpty()
 	return (size == 0) ? true : false;
 }
 
-void Equeue::sizeOfEqueue()
+int Equeue::sizeOfEqueue()
 {
-	std::cout << "Size of Equeue is: " << size << std::endl;
+	//std::cout << "Size of Equeue is: " << size << std::endl;
+	return size;
 }
